@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.head-container{
+  background-image: url(./pexels-photo-7063767.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header{
+  color: #e9e8e8;
+   font-weight: bold;
+   font-size: 2.8rem;
+   margin-bottom: 1.5rem;
+}
+
+.title-text{
+    color: #e9e8e8;
+    font-size: 1.5rem;
+}
+
+.title{
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border: hidden;
+    border-bottom: 1px solid #000;
+    margin-bottom: 1rem;
+    width: 10rem;
+}
+
+.body{
+    margin-bottom: 1rem;
+    resize: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #000;
+    padding: 0.5rem;
+}
+
+.hidden{
+    display: none;
+}
+
+.add{
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+    border: none;
+}
+
+.notes{
+    padding: 1rem;
+    background-color: darkgray;
+}
+
+.note-title{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.note-body{
+    font-size: 1rem;
+    width: fit-content;
+}
+
+.delete{
+    display: none;
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #000;
+}
+.deletebtn{
+    width: fit-content;
+}
+.deletebtn:hover + .delete{
+   display: block;
+   width: fit-content;
+}
+
+
+
+/* .text-style{
+    background-color: aquamarine;
+    font-size: 1.2;
+    color: black;
+    padding: 0.8rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+} */
