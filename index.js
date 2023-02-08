@@ -10,15 +10,27 @@ let g = 0;
 
 addBtn.addEventListener('click', function(){
 
+    let alt = title.value;
+     
+     if(!title.value){
+       let newTitle = body.value;
+       alt = newTitle.slice(0,20) + " ..."
+     }
+
     let input = `
     <div class="notes">
-       <p id="noteTitle" class="note-title" onclick ="noteDisplay(${++g})">${title.value}</p>
+       <p id="noteTitle" class="note-title" onclick ="noteDisplay(${++g})">${alt}</p>
        <p id="note-body${g}" class=" hidden">${body.value}</p>
        <p class="deletebtn" onclick ="noteDelete(${g})">❌</p>
        <p class="delete"> DELETE </p>
     </div>
     `
-    notes.insertAdjacentHTML("afterbegin", input) 
+
+    if(body.value){
+        notes.insertAdjacentHTML("afterbegin", input) 
+    }
+
+  body.value = title.value = ""
 })
 
 function noteDisplay(e){ 
