@@ -56,30 +56,56 @@
     border: none;
 }
 
+.markgroup{
+    display: flex;
+    align-items: center;
+}
+
 .notes{
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: darkgray;
+    border: 1px solid #fdfcfc;
+    border-left: none;
+    border-right: none;
+}
+
+.titleFlex{
+ display: flex;
+ justify-content: space-between;
+}
+
+.color{
+    width: 2rem;
+    height: 1.5rem;
+    background:none;
+    border: 0;
 }
 
 .note-title{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
 .note-body{
-    font-size: 1rem;
+    font-size: 1.2rem;
     width: fit-content;
 }
 
 .delete{
     display: none;
-    color: #fff;
-    background-color: #000;
-    border: 1px solid #000;
+    color: #fc0404;
+    font-weight: bold;
+    position: absolute;
+    margin: -1.5rem 0 0 1.5rem;
+    
 }
+
 .deletebtn{
+  
     width: fit-content;
+    margin: 1rem 0 0.5rem 0;
 }
+
 .deletebtn:hover + .delete{
    display: block;
    width: fit-content;
