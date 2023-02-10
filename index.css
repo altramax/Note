@@ -45,10 +45,6 @@
     padding: 0.5rem;
 }
 
-.hidden{
-    display: none;
-}
-
 .add{
     padding: 0.5rem 2rem;
     font-size: 1.2rem;
@@ -84,41 +80,29 @@
 .note-title{
     font-size: 1.5rem;
     font-weight: 700;
+    padding: 0.5rem 0.5rem;
 }
 
 .note-body{
+    display: none;
     font-size: 1.2rem;
     width: fit-content;
+    padding: 1rem;
+    transition: display 4s ease;
 }
 
 .delete{
-    display: none;
-    color: #fc0404;
-    font-weight: bold;
-    position: absolute;
-    margin: -1.5rem 0 0 1.5rem;
-    
-}
-
-.deletebtn{
-  
     width: fit-content;
-    margin: 1rem 0 0.5rem 0;
+    color: #fafafa;
+    font-weight: bold;
+    margin: 1rem 0 0 0;
+    display: block;
+    background-color: #fc0404;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
 }
 
-.deletebtn:hover + .delete{
-   display: block;
-   width: fit-content;
+.display{
+  display: block;
+  
 }
-
-
-
-/* .text-style{
-    background-color: aquamarine;
-    font-size: 1.2;
-    color: black;
-    padding: 0.8rem;
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-} */
