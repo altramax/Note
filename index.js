@@ -22,13 +22,11 @@ addBtn.addEventListener('click', function(){
        <p id="note-body${count}" class="note-body">${body.value}
        <span class="delete"onclick ="noteDelete(${count})">DELETE NOTE</span>
       </p>
-       
     </div>
     `
     if(body.value){
         notes.insertAdjacentHTML("afterbegin", input) 
     }
-
   body.value = title.value = ""
 })
 
