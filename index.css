@@ -64,6 +64,7 @@
     border: 1px solid #fdfcfc;
     border-left: none;
     border-right: none;
+    cursor: pointer;
 }
 
 .titleFlex{
@@ -89,7 +90,6 @@
     font-size: 1.2rem;
     width: fit-content;
     padding: 1rem;
-    transition: display 4s ease;
 }
 
 .delete{
@@ -97,12 +97,48 @@
     color: #fafafa;
     font-weight: bold;
     margin: 1rem 0 0 0;
+    margin-left: auto;
     display: block;
     background-color: #fc0404;
     padding: 0.2rem;
     border-radius: 0.2rem;
+    display: none;
+}
+
+.edit, .updatenote{
+    position: absolute;
+    width: fit-content;
+    color: #fafafa;
+    font-weight: bold;
+    margin: 1rem 0 0 0;
+    display: none;
+    background-color: #000000;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+}
+
+.updatenote{
+    display: block;
+}
+
+.titleEdit{
+ resize: none;
+ border: none;
+ width: 95vw;
+ background-color: inherit;
+}
+
+.bodyEdit{
+    resize: none;
+    border: none;
+    width: 95vw;
+    background-color: inherit;
 }
 
 .display{
   display: block; 
+}
+
+.hidden{
+    display: none;
 }
