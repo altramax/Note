@@ -124,7 +124,7 @@
 
 .titleEdit{
     resize: none;
-    border: 1px solid #fdfcfc;
+    border: 1px solid #757575;
     width: 90vw;
     padding: 0.5rem;
     font-size: 1.2rem;
@@ -133,7 +133,7 @@
 
 .bodyEdit{
     resize: none;
-    border: 1px solid #fdfcfc;
+    border: 1px solid #757575;
     width: 90vw;
     padding: 1rem;
     font-size: 1.2rem;
