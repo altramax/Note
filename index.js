@@ -76,9 +76,9 @@ function displayNote(e){
   let noteTitle = document.querySelector('.num' + e)
   let noteBody = document.getElementById('notebody' + e)
   
-  noteTitle.innerHTML = `<textarea id="titleEdit${e}" name="title" class="titleEdit" cols="20" rows="1">${currentHeadText}
+  noteTitle.innerHTML = `<textarea id="titleEdit${e}" name="title" class="titleEdit" cols="35" rows="2">${currentHeadText}
   </textarea>`
-  noteBody.innerHTML = `<textarea id="bodyEdit${e}" name="body" class="bodyEdit" cols="35" rows="5">${currentBodyText}
+  noteBody.innerHTML = `<textarea id="bodyEdit${e}" name="body" class="bodyEdit" cols="35" rows="6">${currentBodyText}
   </textarea>`
 }
 

@@ -5,14 +5,14 @@
 }
 
 .head-container{
-  background-image: url(./pexels-photo-7063767.webp);
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    background-image: url(./pexels-photo-7063767.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .header{
@@ -37,9 +37,10 @@
 }
 
 .body{
+    width: 90vw;
     margin-bottom: 1rem;
     resize: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #000;
     padding: 0.5rem;
@@ -68,8 +69,8 @@
 }
 
 .titleFlex{
- display: flex;
- justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .color{
@@ -89,7 +90,7 @@
     display: none;
     font-size: 1.2rem;
     width: fit-content;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .delete{
@@ -122,25 +123,25 @@
 }
 
 .titleEdit{
- resize: none;
- border: none;
- width: 95vw;
- padding: 0.5rem;
- font-size: 1.2rem;
- background-color: inherit;
+    resize: none;
+    border: 1px solid #fdfcfc;
+    width: 90vw;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    background-color: inherit;
 }
 
 .bodyEdit{
     resize: none;
-    border: none;
-    width: 95vw;
-    padding: 0.5rem;
-    font-size: 1rem;
+    border: 1px solid #fdfcfc;
+    width: 90vw;
+    padding: 1rem;
+    font-size: 1.2rem;
     background-color: inherit;
 }
 
 .display{
-  display: block; 
+    display: block; 
 }
 
 .hidden{
