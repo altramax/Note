@@ -8,38 +8,43 @@ const noteBody = document.getElementById('note-body');
 const noteTitle = document.getElementById('noteTitle');
 
 let count = 0;
-let dropDown = true;
+let dropDown  = true;
 
 
-function output(titleEdit = 0,bodyEdit = 0){
+// ADD NEW NOTE
+addBtn.addEventListener('click', function(){
 
-    if(titleEdit === 0  && bodyEdit === 0){
-      title = titleEdit;
-      body = bodyEdit;
+let alt = title.value.slice(0,50)
 
-    }else{
-      title = title;
-      body = body;
-    }
-
+  if(!title.value){
+    let newTitle = body.value;
+    alt = newTitle.slice(0,40) + "..."
   }
 
+`${++count}`
 
+let input = `
 
-
-
-
-  
-// add new note 
-addBtn.addEventListener('click', function(){
+<div id="notes${count}"  data="true" class="notes">
+ <div id="forChange${count}">
+    <p id="noteTitle${count}" class="note-title num${count}" onclick ="displayNote(${count})">${alt}</p> 
+    <p id="notebody${count}" class="note-body">${body.value}</p>
+    <div>
+    <span id="Edit${count}" class="edit" onclick="editNote(${count})">EDIT NOTE</span>
+    <span id="updateNote${count}" class="updatenote hidden" onclick="updateNote(${count})">UPDATE NOTE</span>
+    </div>
+    <span id="Delete${count}" class="delete" onclick ="deleteNote(${count})">DELETE NOTE</span>
+  </div>
+</div>
+`
     if(body.value){
-        notes.insertAdjacentHTML("afterbegin", output()) 
+        notes.insertAdjacentHTML("afterbegin", input) 
     }
-  body.value = title.value = ""
+ return  body.value = title.value = ""
 })
 
 
-// open and close note 
+// OPEN AND CLOSE NOTE
 function displayNote(e){ 
   if(dropDown){
     document.getElementById('notebody' + e).classList.toggle('display')
@@ -48,16 +53,17 @@ function displayNote(e){
 }
 
 
-//  Delete note
-function deleteNote(e){
-    document.getElementById('notebody' + e).parentNode.style.display="none"
+//  DELETE NOTE
+    function deleteNote(e){
+    document.getElementById('forChange' + e).parentNode.style.display="none"
 }
 
 
-// Edit note
-function EditNote(e){
+// EDIT NOTE
+  function editNote(e){
+    
   // stop dropdown display 
-  dropDown = false;
+   dropDown = false
 
 // toggle button 
   document.getElementById('Edit' + e).classList.toggle('hidden')
@@ -74,23 +80,32 @@ function EditNote(e){
   </textarea>`
   noteBody.innerHTML = `<textarea id="bodyEdit${e}" name="body" class="bodyEdit" cols="35" rows="5">${currentBodyText}
   </textarea>`
- let newNoteTitle = noteTitle.textContent;
- let newNoteBody = noteBody.textContent;
-
 }
 
 
 // Update edited note 
 function updateNote(e){
-   let newTitle = document.getElementById('noteTitle' + e);
-   let newBody = document.getElementById('notebody' + e);
-   let newNote = document.getElementById('notes' + e)
-   let editedTitle = document.getElementById('titleEdit' + e).value;
-   let editedBody = document.getElementById('bodyEdit' + e).value;
-
-  // console.log(editedTitle, editedBody);
-  newNote.innerHTML = output(editedTitle, editedBody)
-
-   
-  //  console.log(e);
+  let newNote = document.getElementById('notes' + e)
+  let editedTitle = document.getElementById('titleEdit' + e).value;
+  let editedBody = document.getElementById('bodyEdit' + e).value;
+  let alt = editedTitle.slice(0,50)
+  
+    if(!editedTitle){
+      let newTitle = editedBody.value;
+      alt = newTitle.slice(0,40) + "..."
+    }
+    
+  let input = `
+   <div id="forChange${e}">
+      <p id="noteTitle${e}" class="note-title num${e}" onclick ="displayNote(${e})">${alt}</p> 
+      <p id="notebody${e}" class="note-body">${editedBody}</p>
+      <div>
+      <span id="Edit${e}" class="edit" onclick="EditNote(${e})">EDIT NOTE</span>
+      <span id="updateNote${e}" class="updatenote hidden" onclick="updateNote(${e})">UPDATE NOTE</span>
+      </div>
+      <span id="Delete${e}" class="delete" onclick ="deleteNote(${e})">DELETE NOTE</span>
+    <div>
+    `
+    dropDown = true;
+    return newNote.innerHTML = input;
 }
