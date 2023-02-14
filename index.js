@@ -61,7 +61,7 @@ function displayNote(e){
 
 // EDIT NOTE
   function editNote(e){
-    
+
   // stop dropdown display 
    dropDown = false
 
@@ -100,7 +100,7 @@ function updateNote(e){
       <p id="noteTitle${e}" class="note-title num${e}" onclick ="displayNote(${e})">${alt}</p> 
       <p id="notebody${e}" class="note-body">${editedBody}</p>
       <div>
-      <span id="Edit${e}" class="edit" onclick="EditNote(${e})">EDIT NOTE</span>
+      <span id="Edit${e}" class="edit" onclick="editNote(${e})">EDIT NOTE</span>
       <span id="updateNote${e}" class="updatenote hidden" onclick="updateNote(${e})">UPDATE NOTE</span>
       </div>
       <span id="Delete${e}" class="delete" onclick ="deleteNote(${e})">DELETE NOTE</span>

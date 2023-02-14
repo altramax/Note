@@ -33,7 +33,7 @@
     border: hidden;
     border-bottom: 1px solid #000;
     margin-bottom: 1rem;
-    width: 10rem;
+    width: 15rem;
 }
 
 .body{
@@ -125,6 +125,8 @@
  resize: none;
  border: none;
  width: 95vw;
+ padding: 0.5rem;
+ font-size: 1.2rem;
  background-color: inherit;
 }
 
@@ -132,6 +134,8 @@
     resize: none;
     border: none;
     width: 95vw;
+    padding: 0.5rem;
+    font-size: 1rem;
     background-color: inherit;
 }
 
@@ -141,4 +145,19 @@
 
 .hidden{
     display: none;
+}
+
+@media screen and (min-width : 768px){
+    .title{
+        width: 20rem;
+        height: 3rem;
+    }
+    .body{
+        width: 40rem;
+        height: 10rem;
+    } 
+    .add{
+        padding: 0.5rem 3rem;
+        font-size: 1.5rem;
+    }
 }
