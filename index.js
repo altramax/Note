@@ -37,9 +37,7 @@ let input = `
   </div>
 </div>
 `
-    if(body.value){
-        notes.insertAdjacentHTML("afterbegin", input) 
-    }
+    notes.insertAdjacentHTML("afterbegin", input) 
  return  body.value = title.value = ""
 })
 
@@ -55,6 +53,7 @@ function displayNote(e){
 
 //  DELETE NOTE
     function deleteNote(e){
+    dropDown = true;
     document.getElementById('forChange' + e).parentNode.style.display="none"
 }
 
