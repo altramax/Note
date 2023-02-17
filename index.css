@@ -5,7 +5,7 @@
 }
 
 .head-container {
-  background-image: url(./pexels-photo-7063767.webp);
+  background-image: url(./images/pexels-photo-7063767.webp);
   background-size: cover;
   background-repeat: no-repeat;
   padding: 2rem;
@@ -34,6 +34,10 @@
   border-bottom: 1px solid #000;
   margin-bottom: 1rem;
   width: 15rem;
+}
+
+.arrow{
+  width: 2rem;
 }
 
 .body {
@@ -84,6 +88,9 @@
   font-size: 1.5rem;
   font-weight: 700;
   padding: 0.5rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .note-body {
@@ -147,6 +154,10 @@
 
 .hidden {
   display: none;
+}
+
+.rotate{
+  transform: rotate(180deg);
 }
 
 @media screen and (min-width: 768px) {

@@ -25,7 +25,7 @@ addBtn.addEventListener("click", function () {
 
 <div id="notes${count}"  data="true" class="notes">
  <div id="forChange${count}">
-    <p id="noteTitle${count}" class="note-title num${count}" onclick ="displayNote(${count})">${alt}</p> 
+    <p id="noteTitle${count}" class="note-title num${count}" onclick ="displayNote(${count})">${alt}<img id="arrow-direction${count}" class="arrow" src="./images/arrow.svg" alt="arrow"></p> 
     <p id="notebody${count}" class="note-body">${body.value}</p>
     <div>
     <span id="Edit${count}" class="edit" onclick="editNote(${count})">EDIT NOTE</span>
@@ -49,6 +49,7 @@ function displayNote(e) {
     document.getElementById("notebody" + e).classList.toggle("display");
     document.getElementById("Edit" + e).classList.toggle("display");
     document.getElementById("Delete" + e).classList.toggle("display");
+    document.getElementById('arrow-direction' + e).classList.toggle('rotate');
   }
 }
 
@@ -66,6 +67,7 @@ function editNote(e) {
   // toggle button
   document.getElementById("Edit" + e).classList.toggle("hidden");
   document.getElementById("updateNote" + e).classList.toggle("hidden");
+  document.getElementById('arrow-direction' + e).classList.toggle('rotate');
 
   // change text area
   let currentBodyText = document.getElementById("notebody" + e).innerHTML;
@@ -94,7 +96,7 @@ function updateNote(e) {
 
   let input = `
    <div id="forChange${e}">
-      <p id="noteTitle${e}" class="note-title num${e}" onclick ="displayNote(${e})">${alt}</p> 
+      <p id="noteTitle${e}" class="note-title num${e}" onclick ="displayNote(${e})">${alt}<img id="arrow-direction${count}" class="arrow" src="./images/arrow.svg" alt="arrow"></p> 
       <p id="notebody${e}" class="note-body">${editedBody}</p>
       <div>
       <span id="Edit${e}" class="edit" onclick="editNote(${e})">EDIT NOTE</span>
