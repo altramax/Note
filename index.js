@@ -17,7 +17,19 @@ function callDisplay(num, intake) {
     storageData = window.localStorage.getItem(`${num}`);
   }
   const storage = { ...localStorage };
-  let value = Object.values(storage);
+  let val = Object.values(storage);
+  let value;
+   for(let i of val){
+     if(i.length < 5){
+      val.pop()
+     }else{
+       value = i;
+     }
+   }
+  
+
+
+  
 
   console.log(value);
 
