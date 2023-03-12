@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
 }
 
 .head-container {
@@ -84,25 +85,26 @@
   border: 0;
 }
 
-.title-group {
+.title-group {  
   display: flex;
   justify-content: space-between;
+  overflow-wrap: break-word;
 }
 
 .note-title {
   font-size: 1.5rem;
   font-weight: 700;
   padding: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 95vw;
+  overflow-wrap: break-word;
 }
 
 .note-body {
   display: none;
   font-size: 1.2rem;
-  width: fit-content;
+  width: 95vw;
   padding: 0.5rem;
+  overflow-wrap: break-word;
 }
 
 .delete {
@@ -135,20 +137,11 @@
   display: block;
 }
 
-.titleEdit {
+.titleEdit, .bodyEdit {
   resize: none;
   border: 2px solid #ffffff;
-  width: 90vw;
+  width: 85vw;
   padding: 0.5rem;
-  font-size: 1.2rem;
-  background-color: inherit;
-}
-
-.bodyEdit {
-  resize: none;
-  border: 2px solid #ffffff;
-  width: 90vw;
-  padding: 1rem;
   font-size: 1.2rem;
   background-color: inherit;
 }
@@ -177,5 +170,9 @@
   .add {
     padding: 0.5rem 3rem;
     font-size: 1.5rem;
+  }
+
+  .titleEdit, .bodyEdit{
+    width: 93vw;
   }
 }

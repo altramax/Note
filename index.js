@@ -55,10 +55,10 @@ if (Object.keys(t).includes("increase")) {
 
 // ADD NEW NOTE
 addBtn.addEventListener("click", function (e) {
-  let alt = title.value.slice(0, 100).trim();
+  let alt = title.value;
   if (!title.value) {
     let newTitle = body.value;
-    alt = newTitle.split(" ").slice(0, 5).join(" ").trim();
+    alt = newTitle.split(" ").join(" ").slice(0, 100) + "...";
   }
 
   // add counter
@@ -164,3 +164,4 @@ function updateNote(e) {
   dropDown = true;
   callDisplayEdited(`${e}`, input);
 }
+
