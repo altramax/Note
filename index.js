@@ -10,6 +10,7 @@ const noteTitle = document.getElementById("noteTitle");
 let dropDown = true;
 // window.localStorage.clear();
 
+// DISPLAY NOTES FROM LOCAL STORAGE
 function callDisplay(num, intake) {
   let storageData;
   if (num !== "" && intake !== "") {
@@ -22,20 +23,16 @@ function callDisplay(num, intake) {
   let z;
   for (let i of value) {
     if (i.length < 400) {
-      console.log("lower than 300");
     } else {
       z = i;
-      console.log("higher than 300");
     }
 
     if (
-
-      i.length > 400 && storageData ===
-      value[value.indexOf(i)] &&
+      i.length > 400 &&
+      storageData === value[value.indexOf(i)] &&
       num !== "" &&
       intake !== ""
     ) {
-      console.log("checking condition");
       notes.insertAdjacentHTML("afterbegin", `${z}`);
     } else if (
       i.length > 400 &&
@@ -43,19 +40,14 @@ function callDisplay(num, intake) {
       intake === "" &&
       z !== undefined
     ) {
-      // console.log(z);
       notes.insertAdjacentHTML("afterbegin", `${z}`);
-      console.log(z);
-      console.log(value);
     }
   }
 }
-
 callDisplay("", "");
 
-// Create increment in memory
+// CREATE NOTE COUNT NUMBER IN LOCAL MEMORY
 let t = { ...localStorage };
-// console.log(t);
 if (Object.keys(t).includes("increase")) {
 } else {
   window.localStorage.setItem("increase", "0");
@@ -63,20 +55,17 @@ if (Object.keys(t).includes("increase")) {
 
 // ADD NEW NOTE
 addBtn.addEventListener("click", function (e) {
-  // e.preventDefault();
   let alt = title.value.slice(0, 100).trim();
-
   if (!title.value) {
     let newTitle = body.value;
     alt = newTitle.split(" ").slice(0, 5).join(" ").trim();
   }
 
-  // to add counter
+  // add counter
   let k = window.localStorage.getItem(`increase`);
   `${++k}`;
   window.localStorage.setItem("increase", `${k}`);
   let count = window.localStorage.getItem(`increase`);
-  console.log(count);
 
   let input = `
 <div id="notes${count}"  data="true" >
@@ -112,9 +101,9 @@ function displayNote(e) {
 //  DELETE NOTE
 function deleteNote(e) {
   dropDown = true;
-  document.getElementById("forChange" + e).parentNode.style.display="none";
+  document.getElementById("forChange" + e).parentNode.style.display = "none";
   // DELETE FROM LOCAL STORAGE
-  window.localStorage.removeItem(`${e}`)
+  window.localStorage.removeItem(`${e}`);
 }
 
 // EDIT NOTE
@@ -160,6 +149,7 @@ function updateNote(e) {
     alt = newTitle.split(" ").slice(0, 5).join(" ").trim();
   }
   let input = `
+  <div id="notes${e}"  data="true">
    <div id="forChange${e}" class="notes">
    <div class="title-group"><p id="noteTitle${e}" class="note-title num${e}" onclick ="displayNote(${e})">${alt}</p><img id="arrow-direction${e}" class="arrow" src="./images/arrow.svg" alt="arrow"></div>
       <p id="notebody${e}" class="note-body">${editedBody}</p>
@@ -169,7 +159,7 @@ function updateNote(e) {
       </div>
       <span id="Delete${e}" class="delete" onclick ="deleteNote(${e})">DELETE NOTE</span>
     <div>
-
+    </div>
     `;
   dropDown = true;
   callDisplayEdited(`${e}`, input);
