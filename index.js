@@ -113,6 +113,7 @@ function displayNote(e) {
 function deleteNote(e) {
   dropDown = true;
   document.getElementById("forChange" + e).parentNode.style.display="none";
+  // DELETE FROM LOCAL STORAGE
   window.localStorage.removeItem(`${e}`)
 }
 
@@ -139,34 +140,26 @@ function editNote(e) {
   </textarea>`;
 }
 
-// Update edited note
+// UPDATE AND CALL LOCAL STORAGE FOR EDITED NOTE
 function callDisplayEdited(num, intake) {
   let storageData;
-  
+  // update local Storage
   window.localStorage.setItem(`${num}`, `${intake}`);
+  // call local Storage
   storageData = window.localStorage.getItem(`${num}`);
-
-
-     document.getElementById("notes" + `${num}`).innerHTML = storageData;
-
-
- let change = document.querySelector(`.editn${num}b`);
-  notes.parentNode.replaceChild(change, item)
+  document.getElementById("notes" + `${num}`).innerHTML = storageData;
 }
 
+// UPDATE EDITED NOTE
 function updateNote(e) {
-  // let newNote = document.getElementById("notes" + e);
   let editedTitle = document.getElementById("titleEdit" + e).value;
   let editedBody = document.getElementById("bodyEdit" + e).value;
   let alt = editedTitle.slice(0, 100).trim();
-
   if (!editedTitle) {
     let newTitle = editedBody.value;
     alt = newTitle.split(" ").slice(0, 5).join(" ").trim();
   }
-
   let input = `
-  <div id="notes${e}"  data="true">
    <div id="forChange${e}" class="notes">
    <div class="title-group"><p id="noteTitle${e}" class="note-title num${e}" onclick ="displayNote(${e})">${alt}</p><img id="arrow-direction${e}" class="arrow" src="./images/arrow.svg" alt="arrow"></div>
       <p id="notebody${e}" class="note-body">${editedBody}</p>
@@ -176,9 +169,8 @@ function updateNote(e) {
       </div>
       <span id="Delete${e}" class="delete" onclick ="deleteNote(${e})">DELETE NOTE</span>
     <div>
-    </div>
+
     `;
   dropDown = true;
   callDisplayEdited(`${e}`, input);
-  // return (newNote.innerHTML = input);
 }
