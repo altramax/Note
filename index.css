@@ -36,7 +36,7 @@
   width: 15rem;
 }
 
-.arrow{
+.arrow {
   width: 2rem;
 }
 
@@ -84,7 +84,7 @@
   border: 0;
 }
 
-.title-group{
+.title-group {
   display: flex;
   justify-content: space-between;
 }
@@ -96,6 +96,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
 }
 
 .note-body {
@@ -161,7 +162,7 @@
   display: none;
 }
 
-.rotate{
+.rotate {
   transform: rotate(180deg);
 }
 
