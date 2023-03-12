@@ -64,7 +64,7 @@
 }
 
 .notes {
-  padding: 0.5rem;
+  padding: 0.5rem 2rem 0.5rem 1rem;
   background-color: darkgray;
   border: 1px solid #fdfcfc;
   border-left: none;
@@ -92,11 +92,10 @@
 .note-title {
   font-size: 1.5rem;
   font-weight: 700;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
 }
 
 .note-body {
@@ -138,8 +137,8 @@
 
 .titleEdit {
   resize: none;
-  border: 1px solid #757575;
-  width: 90vw;
+  border: 2px solid #ffffff;
+  width: 94vw;
   padding: 0.5rem;
   font-size: 1.2rem;
   background-color: inherit;
@@ -147,8 +146,8 @@
 
 .bodyEdit {
   resize: none;
-  border: 1px solid #757575;
-  width: 90vw;
+  border: 2px solid #ffffff;
+  width: 94vw;
   padding: 1rem;
   font-size: 1.2rem;
   background-color: inherit;
