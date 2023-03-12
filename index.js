@@ -79,8 +79,8 @@ addBtn.addEventListener("click", function (e) {
   console.log(count);
 
   let input = `
-<div id="notes${count}"  data="true" class="notes">
- <div id="forChange${count}">
+<div id="notes${count}"  data="true" >
+ <div id="forChange${count}" class="notes">
     <div class="title-group"><p id="noteTitle${count}" class="note-title num${count}" onclick ="displayNote(${count})">${alt}</p><img id="arrow-direction${count}" class="arrow" src="./images/arrow.svg" alt="arrow"></div>
     <p id="notebody${count}" class="note-body">${body.value}</p>
     <div>
@@ -141,25 +141,17 @@ function editNote(e) {
 
 // Update edited note
 function callDisplayEdited(num, intake) {
-  // window.localStorage.clear();
   let storageData;
-  // if (num !== "" && intake !== "") {
-  //   // console.log(num, intake);
+  
   window.localStorage.setItem(`${num}`, `${intake}`);
   storageData = window.localStorage.getItem(`${num}`);
-  // }
-  document.getElementById("notes" + `${num}`).innerHTML = intake;
 
-  // const storage = { ...localStorage };
-  // let value = Object.values(storage);
-  // console.log(value);
 
-  // for (let i of value) {
-  //   if (value[value.indexOf(i)] === storageData) {
-  //   // } else if (num === "" && intake === "") {
-  //   //   notes.insertAdjacentHTML("afterbegin", `${i}`);
-  //   // }
-  // }}
+     document.getElementById("notes" + `${num}`).innerHTML = storageData;
+
+
+ let change = document.querySelector(`.editn${num}b`);
+  notes.parentNode.replaceChild(change, item)
 }
 
 function updateNote(e) {
@@ -174,8 +166,8 @@ function updateNote(e) {
   }
 
   let input = `
-  <div id="notes${e}"  data="true" class="notes">
-   <div id="forChange${e}">
+  <div id="notes${e}"  data="true">
+   <div id="forChange${e}" class="notes">
    <div class="title-group"><p id="noteTitle${e}" class="note-title num${e}" onclick ="displayNote(${e})">${alt}</p><img id="arrow-direction${e}" class="arrow" src="./images/arrow.svg" alt="arrow"></div>
       <p id="notebody${e}" class="note-body">${editedBody}</p>
       <div>
@@ -184,7 +176,7 @@ function updateNote(e) {
       </div>
       <span id="Delete${e}" class="delete" onclick ="deleteNote(${e})">DELETE NOTE</span>
     <div>
-  </div>
+    </div>
     `;
   dropDown = true;
   callDisplayEdited(`${e}`, input);
