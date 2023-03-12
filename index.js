@@ -8,7 +8,7 @@ const noteBody = document.getElementById("note-body");
 const noteTitle = document.getElementById("noteTitle");
 
 let dropDown = true;
-// window.localStorage.clear(); 
+// window.localStorage.clear();
 
 function callDisplay(num, intake) {
   let storageData;
@@ -16,29 +16,37 @@ function callDisplay(num, intake) {
     window.localStorage.setItem(`${num}`, `${intake}`);
     storageData = window.localStorage.getItem(`${num}`);
   }
+
   const storage = { ...localStorage };
-  let val = Object.values(storage);
-  let value;
-   for(let i of val){
-     if(i.length < 5){
-      val.pop()
-     }else{
-       value = i;
-     }
-   }
-  
-
-
-  
-
-  console.log(value);
-
+  let value = Object.values(storage);
+  let z;
   for (let i of value) {
-    console.log(typeof i);
-    if (value[value.indexOf(i)] === storageData) {
-      notes.insertAdjacentHTML("afterbegin", `${i}`);
-    } else if (num === "" && intake === "") {
-      notes.insertAdjacentHTML("afterbegin", `${i}`);
+    if (i.length < 400) {
+      console.log("lower than 300");
+    } else {
+      z = i;
+      console.log("higher than 300");
+    }
+
+    if (
+
+      i.length > 400 && storageData ===
+      value[value.indexOf(i)] &&
+      num !== "" &&
+      intake !== ""
+    ) {
+      console.log("checking condition");
+      notes.insertAdjacentHTML("afterbegin", `${z}`);
+    } else if (
+      i.length > 400 &&
+      num === "" &&
+      intake === "" &&
+      z !== undefined
+    ) {
+      // console.log(z);
+      notes.insertAdjacentHTML("afterbegin", `${z}`);
+      console.log(z);
+      console.log(value);
     }
   }
 }
@@ -46,13 +54,12 @@ function callDisplay(num, intake) {
 callDisplay("", "");
 
 // Create increment in memory
-let t = {...localStorage}
+let t = { ...localStorage };
 // console.log(t);
-if(Object.keys(t).includes("increase")){
-}else{
-  window.localStorage.setItem("increase", "0");  
+if (Object.keys(t).includes("increase")) {
+} else {
+  window.localStorage.setItem("increase", "0");
 }
-
 
 // ADD NEW NOTE
 addBtn.addEventListener("click", function (e) {
@@ -64,13 +71,12 @@ addBtn.addEventListener("click", function (e) {
     alt = newTitle.split(" ").slice(0, 5).join(" ").trim();
   }
 
-
-// to add counter 
+  // to add counter
   let k = window.localStorage.getItem(`increase`);
-  `${++k}`
+  `${++k}`;
   window.localStorage.setItem("increase", `${k}`);
- let count = window.localStorage.getItem(`increase`)
- console.log(count);
+  let count = window.localStorage.getItem(`increase`);
+  console.log(count);
 
   let input = `
 <div id="notes${count}"  data="true" class="notes">
@@ -93,10 +99,6 @@ addBtn.addEventListener("click", function (e) {
   body.value = title.value = "";
 });
 
-
-
-
-
 // OPEN AND CLOSE NOTE
 function displayNote(e) {
   if (dropDown) {
@@ -110,9 +112,8 @@ function displayNote(e) {
 //  DELETE NOTE
 function deleteNote(e) {
   dropDown = true;
-  document.getElementById("forChange" + e).parentNode.style.display = "none";
-  let g = window.localStorage.getItem("1");
-  console.log(g);
+  document.getElementById("forChange" + e).parentNode.style.display="none";
+  window.localStorage.removeItem(`${e}`)
 }
 
 // EDIT NOTE
@@ -144,12 +145,11 @@ function callDisplayEdited(num, intake) {
   let storageData;
   // if (num !== "" && intake !== "") {
   //   // console.log(num, intake);
-    window.localStorage.setItem(`${num}`, `${intake}`);
-    storageData = window.localStorage.getItem(`${num}`);
+  window.localStorage.setItem(`${num}`, `${intake}`);
+  storageData = window.localStorage.getItem(`${num}`);
   // }
   document.getElementById("notes" + `${num}`).innerHTML = intake;
 
-  
   // const storage = { ...localStorage };
   // let value = Object.values(storage);
   // console.log(value);
@@ -187,6 +187,6 @@ function updateNote(e) {
   </div>
     `;
   dropDown = true;
-  callDisplayEdited(`${e}`, input)
+  callDisplayEdited(`${e}`, input);
   // return (newNote.innerHTML = input);
 }
