@@ -70,7 +70,7 @@ addBtn.addEventListener("click", function (e) {
   let input = `
 <div id="notes${count}"  data="true" >
  <div id="forChange${count}" class="notes">
-    <div class="title-group" onclick ="displayNote(${count})"><p id="noteTitle${count}" class="note-title num${count}">${alt}</p><img id="arrow-direction${count}" class="arrow" src="./images/arrow.svg" alt="arrow"></div>
+    <div class="title-group" onclick ="displayNote(${count})"><p id="noteTitle${count}" class="note-title num${count}">${alt}</p><img id="arrow-direction${count}" class="arrow" src="./images/arrow-down.png" alt="arrow"></div>
     <p id="notebody${count}" class="note-body">${body.value}</p>
     <div>
     <span id="Edit${count}" class="edit" onclick="editNote(${count})">EDIT NOTE</span>
@@ -151,7 +151,7 @@ function updateNote(e) {
   let input = `
   <div id="notes${e}"  data="true">
    <div id="forChange${e}" class="notes">
-   <div class="title-group" onclick ="displayNote(${e})"><p id="noteTitle${e}" class="note-title num${e}">${alt}</p><img id="arrow-direction${e}" class="arrow" src="./images/arrow.svg" alt="arrow"></div>
+   <div class="title-group" onclick ="displayNote(${e})"><p id="noteTitle${e}" class="note-title num${e}">${alt}</p><img id="arrow-direction${e}" class="arrow" src="./images/arrow-down.png" alt="arrow"></div>
       <p id="notebody${e}" class="note-body">${editedBody}</p>
       <div>
       <span id="Edit${e}" class="edit" onclick="editNote(${e})">EDIT NOTE</span>
